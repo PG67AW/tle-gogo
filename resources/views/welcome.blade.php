@@ -21,7 +21,7 @@
         @if (Route::has('login'))
             <livewire:welcome.navigation />
         @endif
-
+        dddddddddddddddddddd
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
                 <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"
