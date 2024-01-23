@@ -1,10 +1,17 @@
 <?php
 
+use App\Models\Visitor;
+use Illuminate\Http\Request;
 use function Laravel\Folio\{middleware, name};
-use function Livewire\Volt\{state, rules};
+use function Livewire\Volt\{state, rules, mount};
 
 name('home');
 // middleware(['redirect-to-dashboard']);
+mount(function (Request $request) {
+    $clientIpAddress = $request->getClientIp();
+    Visitor::create(['ip_address' => $clientIpAddress]);
+});
+
 ?>
 
 <x-layouts.marketing>
@@ -13,9 +20,9 @@ name('home');
         <div class="relative flex flex-col items-center min-h-[100dvh] justify-center w-full overflow-hidden" x-cloak>
 
             <img src="/images/left.png"
-                class="absolute top-0 left-0 w-7/12 -ml-24 -translate-x-1/2 pointer-events-none select-none fill-current opacity-10 dark:opacity-5 text-slate-400">
+                class="fixed top-0 left-0 w-7/12 -ml-24 -translate-x-1/2 dark:invert grayscale duration-500 pointer-events-none select-none fill-current opacity-10 dark:opacity-5 text-slate-400">
             <img src="/images/right.png"
-                class="absolute top-0 right-0 w-7/12 -mr-24 translate-x-1/2 pointer-events-none select-none fill-current opacity-10 dark:opacity-5 text-slate-400">
+                class="fixed top-0 right-0 w-7/12 -mr-24 translate-x-1/2 dark:invert grayscale duration-500 pointer-events-none select-none fill-current opacity-10 dark:opacity-5 text-slate-400">
 
             <div class="flex items-center w-full max-w-6xl px-8 pt-12 pb-20 mx-auto">
                 <div class="container relative max-w-4xl mx-auto text-center">
