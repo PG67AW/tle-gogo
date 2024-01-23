@@ -1,19 +1,19 @@
 <?php
 
-    use function Laravel\Folio\name;
-    use function Livewire\Volt\{state, rules};
+use function Laravel\Folio\name;
+use function Livewire\Volt\{state, rules};
 
-    state(['password' => '']);
-    rules(['password' => 'required|current_password']);
-    name('password.confirm');
+state(['password' => '']);
+rules(['password' => 'required|current_password']);
+name('password.confirm');
 
-    $confirm = function(){
-        $this->validate();
+$confirm = function () {
+    $this->validate();
 
-        session()->put('auth.password_confirmed_at', time());
+    session()->put('auth.password_confirmed_at', time());
 
-        return redirect()->intended('/');
-    };
+    return redirect()->intended('/');
+};
 ?>
 
 <x-layouts.main>
@@ -21,7 +21,9 @@
 
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <x-ui.link href="{{ route('home') }}">
-                <x-ui.logo class="w-auto h-10 mx-auto text-gray-700 fill-current dark:text-gray-100" />
+                {{-- <x-ui.logo class="w-auto h-10 mx-auto text-gray-700 fill-current dark:text-gray-100" /> --}}
+                <img src="/images/bean-logo.png" alt="bean"
+                    class="block w-auto text-gray-800 fill-current h-7 dark:text-gray-200">
             </x-ui.link>
 
             <h2 class="mt-5 text-2xl font-extrabold leading-9 text-center text-gray-800 dark:text-gray-200">
@@ -33,7 +35,8 @@
         </div>
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="px-10 py-0 sm:py-8 sm:shadow-sm sm:bg-white dark:sm:bg-gray-950/50 dark:border-gray-200/10 sm:border sm:rounded-lg border-gray-200/60">
+            <div
+                class="px-10 py-0 sm:py-8 sm:shadow-sm sm:bg-white dark:sm:bg-gray-950/50 dark:border-gray-200/10 sm:border sm:rounded-lg border-gray-200/60">
                 @volt('auth.password.confirm')
                     <form wire:submit="confirm" class="space-y-6">
                         <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
