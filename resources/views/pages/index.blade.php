@@ -4,8 +4,7 @@ use function Laravel\Folio\{middleware, name};
 use function Livewire\Volt\{state, rules};
 
 name('home');
-middleware(['redirect-to-dashboard']);
-
+// middleware(['redirect-to-dashboard']);
 ?>
 
 <x-layouts.marketing>
