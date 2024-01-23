@@ -12,7 +12,12 @@ name('home');
     @volt('home')
         <div class="relative flex flex-col items-center justify-center w-full h-auto overflow-hidden" x-cloak>
 
-            <svg class="absolute top-0 left-0 w-7/12 -ml-40 -translate-x-1/2 fill-current opacity-10 dark:opacity-5 text-slate-400"
+            <img src="/images/left.png"
+                class="absolute top-0 left-0 w-7/12 -ml-24 -translate-x-1/2 fill-current opacity-10 dark:opacity-5 text-slate-400">
+            <img src="/images/right.png"
+                class="absolute top-0 right-0 w-7/12 -mr-24 translate-x-1/2 fill-current opacity-10 dark:opacity-5 text-slate-400">
+
+            {{-- <svg class="absolute top-0 left-0 w-7/12 -ml-40 -translate-x-1/2 fill-current opacity-10 dark:opacity-5 text-slate-400"
                 viewBox="0 0 978 615" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M978 216.141C656.885 277.452 321.116 341.682 0 402.993c39.425-4.071 128.449-11.563 167.843-15.912l6.661 22.46c59.138 174.752 275.144 254.906 438.792 172.235 48.902-72.088 119.911-180.018 171.073-255.946L978 216.141ZM611.485 405.155c-19.059 27.934-46.278 66.955-65.782 94.576-98.453 40.793-230.472-11.793-268.175-111.202-1.096-2.89-1.702-5.965-3.379-11.972l382.99-38.6c-16.875 24.845-31.224 46.049-45.654 67.198Z" />
@@ -37,7 +42,7 @@ name('home');
                     d="M890.991 458.296c-57.168 2.205-69.605 14.641-71.809 71.809-2.205-57.168-14.641-69.604-71.809-71.809 57.168-2.204 69.604-14.641 71.809-71.809 2.204 57.169 14.641 69.605 71.809 71.809Z" />
                 <path
                     d="M952.832 409.766c-21.048.812-25.626 5.39-26.438 26.438-.811-21.048-5.39-25.626-26.437-26.438 21.047-.811 25.626-5.39 26.437-26.437.812 21.047 5.39 25.626 26.438 26.437Z" />
-            </svg>
+            </svg> --}}
 
             <div class="flex items-center w-full max-w-6xl px-8 pt-12 pb-20 mx-auto">
                 <div class="container relative max-w-4xl mx-auto mt-20 text-center sm:mt-24 lg:mt-32">
