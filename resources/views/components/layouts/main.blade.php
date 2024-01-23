@@ -20,7 +20,7 @@
     <title>{{ $title ?? 'Title Saksri' }}</title>
 </head>
 
-<body class="min-h-screen antialiased bg-white dark:bg-gradient-to-b dark:from-gray-950 dark:to-gray-900">
+<body class="min-h-[100dvh] antialiased bg-gray-100 duration-500 transition-colors dark:bg-gray-900">
 
     {{ $slot }}
 

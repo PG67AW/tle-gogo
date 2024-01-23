@@ -1,16 +1,12 @@
 <?php
 
 use App\Models\Visitor;
-use Illuminate\Http\Request;
 use function Laravel\Folio\{middleware, name};
 use function Livewire\Volt\{state, rules, mount};
 
 name('home');
 // middleware(['redirect-to-dashboard']);
-mount(function (Request $request) {
-    $clientIpAddress = $request->getClientIp();
-    Visitor::create(['ip_address' => $clientIpAddress]);
-});
+mount(function () {});
 
 ?>
 

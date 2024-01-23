@@ -1,6 +1,6 @@
 <x-layouts.main>
-    
-    <x-ui.app.header />
+
+    <x-ui.marketing.header />
 
     <!-- Page Heading -->
     @if (isset($header))
@@ -10,7 +10,7 @@
             </div>
         </header>
     @endif
-    
+
     {{ $slot }}
 
 </x-layouts.main>
