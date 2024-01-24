@@ -11,10 +11,18 @@ class Visitor extends Model
 
     protected $fillable = [
         'ip_address',
+        'location',
+        'city',
+        'region',
+        'country',
+        'postal',
+        'timezone',
+        'currency',
     ];
 
-    public function addIp($ip) {
-        $this->create(['ip_address', $ip]);
-    }
+    // public function addIp($ip)
+    // {
+    //     $this->create(['ip_address', $ip]);
+    // }
 
 }
