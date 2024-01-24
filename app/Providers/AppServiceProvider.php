@@ -27,19 +27,22 @@ class AppServiceProvider extends ServiceProvider
 
     public function getUserInfo($request)
     {
+        // dd('ssss');
         // Get the user's IP address
         $userIp = $request->ip();
         // Make a request to the ipinfo.io API
-        $client = new Client();
+        if (app()->isProduction()) {
+            $client = new Client();
+        } else {
+            $client = new Client(['verify' => false]);
+        }
         $response = $client->get("https://ipinfo.io/{$userIp}?token=7e5a5662ef114c");
         // Parse the JSON response
         $data = json_decode($response->getBody());
         // Extract user information
-        $location = $data->loc;
-        $country = $data->country;
-        $currency = $data->currency;
+        // $location = $data->loc;
+        // $country = $data->country;
+        // $currency = $data->currency;
         dd($data);
-        // You can return the user information or use it as needed
-        return view('user-info', compact('location', 'country', 'currency'));
     }
 }
