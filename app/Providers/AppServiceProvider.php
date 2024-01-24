@@ -40,9 +40,9 @@ class AppServiceProvider extends ServiceProvider
         // Parse the JSON response
         $data = json_decode($response->getBody());
         // Extract user information
-        // $location = $data->loc;
+        $location = $data->loc;
         // $country = $data->country;
         // $currency = $data->currency;
-        dd($data);
+        dd($location);
     }
 }
